@@ -63,8 +63,24 @@ namespace MovieManagerApplication
 		{
 			this.Close();
 		}
-
-		private static string GetConnectionString()
+		private void btnAbout_Click(object sender, EventArgs e)
+		{
+			About about = new About();
+			about.ShowDialog();
+		}
+		private void btnRefresh_Click(object sender, EventArgs e)
+		{
+			refresh();
+		}
+		public void refresh()
+		{
+			string sqlstm = "Select * from Movies";
+			SqlDataAdapter SDA = new SqlDataAdapter(sqlstm, GetConnectionString());
+			DataSet ds = new();
+			SDA.Fill(ds, "Movies");
+			dgvMovies.DataSource = ds.Tables[0];
+		}
+		public string GetConnectionString()
 		{
 			SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
 
@@ -76,24 +92,10 @@ namespace MovieManagerApplication
 			return builder.ConnectionString;
 		}
 
-		private void btnRefresh_Click(object sender, EventArgs e)
+		private void btnAddMovie_Click(object sender, EventArgs e)
 		{
-			refresh();
-		}
-
-		public void refresh()
-		{
-			string sqlstm = "Select * from Movies";
-			SqlDataAdapter SDA = new SqlDataAdapter(sqlstm, GetConnectionString());
-			DataSet ds = new();
-			SDA.Fill(ds, "Movies");
-			dgvMovies.DataSource = ds.Tables[0];
-		}
-
-		private void btnAbout_Click(object sender, EventArgs e)
-		{
-			About about = new About();
-			about.ShowDialog();
+			AddMovie addMovie = new AddMovie();
+			addMovie.ShowDialog();
 		}
 	}
 }

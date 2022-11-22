@@ -33,7 +33,7 @@
 			this.btnRefresh = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnAddMovie = new System.Windows.Forms.ToolStripMenuItem();
 			this.updateMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,43 +67,44 @@
 			// btnRefresh
 			// 
 			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(180, 22);
+			this.btnRefresh.Size = new System.Drawing.Size(134, 22);
 			this.btnRefresh.Text = "Refresh List";
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
 			// mnuExit
 			// 
 			this.mnuExit.Name = "mnuExit";
-			this.mnuExit.Size = new System.Drawing.Size(180, 22);
+			this.mnuExit.Size = new System.Drawing.Size(134, 22);
 			this.mnuExit.Text = "Exit";
 			this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
 			// 
 			// maintenanceToolStripMenuItem
 			// 
 			this.maintenanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMovieToolStripMenuItem,
+            this.btnAddMovie,
             this.updateMovieToolStripMenuItem,
             this.deleteMovieToolStripMenuItem});
 			this.maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
 			this.maintenanceToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
 			this.maintenanceToolStripMenuItem.Text = "Maintenance";
 			// 
-			// addMovieToolStripMenuItem
+			// btnAddMovie
 			// 
-			this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-			this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-			this.addMovieToolStripMenuItem.Text = "Add Movie";
+			this.btnAddMovie.Name = "btnAddMovie";
+			this.btnAddMovie.Size = new System.Drawing.Size(180, 22);
+			this.btnAddMovie.Text = "Add Movie";
+			this.btnAddMovie.Click += new System.EventHandler(this.btnAddMovie_Click);
 			// 
 			// updateMovieToolStripMenuItem
 			// 
 			this.updateMovieToolStripMenuItem.Name = "updateMovieToolStripMenuItem";
-			this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+			this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.updateMovieToolStripMenuItem.Text = "Update Movie";
 			// 
 			// deleteMovieToolStripMenuItem
 			// 
 			this.deleteMovieToolStripMenuItem.Name = "deleteMovieToolStripMenuItem";
-			this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+			this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.deleteMovieToolStripMenuItem.Text = "Delete Movie";
 			// 
 			// btnAbout
@@ -145,6 +146,7 @@
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Main";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Movie Manager Application";
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.menuStrip1.ResumeLayout(false);
@@ -163,7 +165,7 @@
 		private ToolStripMenuItem btnAbout;
 		private ToolStripMenuItem btnRefresh;
 		private ToolStripMenuItem mnuExit;
-		private ToolStripMenuItem addMovieToolStripMenuItem;
+		private ToolStripMenuItem btnAddMovie;
 		private ToolStripMenuItem updateMovieToolStripMenuItem;
 		private ToolStripMenuItem deleteMovieToolStripMenuItem;
 		private DataGridView dgvMovies;

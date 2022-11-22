@@ -29,21 +29,20 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnClose = new System.Windows.Forms.Button();
 			this.richTextBox = new System.Windows.Forms.RichTextBox();
 			this.SuspendLayout();
 			// 
-			// button1
+			// btnClose
 			// 
-			this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button1.Location = new System.Drawing.Point(469, 307);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Close";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btnClose.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btnClose.Location = new System.Drawing.Point(469, 307);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(75, 23);
+			this.btnClose.TabIndex = 1;
+			this.btnClose.Text = "Close";
+			this.btnClose.UseVisualStyleBackColor = false;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// richTextBox
 			// 
@@ -64,8 +63,9 @@
 			this.BackColor = System.Drawing.Color.LightBlue;
 			this.ClientSize = new System.Drawing.Size(556, 342);
 			this.Controls.Add(this.richTextBox);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnClose);
 			this.Name = "About";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "About";
 			this.Load += new System.EventHandler(this.About_Load);
 			this.ResumeLayout(false);
@@ -73,7 +73,7 @@
 		}
 
 		#endregion
-		private Button button1;
+		private Button btnClose;
 		private RichTextBox richTextBox;
 	}
 }
