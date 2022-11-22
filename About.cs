@@ -35,11 +35,21 @@ namespace MovieManagerApplication
 			int index2 = richTextBox.Text.IndexOf(secondLine);
 			int secondLength = secondLine.Length;
 			richTextBox.Select(index2, secondLength);
-;
+
 			int authorIndex = richTextBox.Text.IndexOf("Garrett Crook");
 			int authorLength = 13;
 			richTextBox.Select(authorIndex, authorLength);
 			richTextBox.SelectionFont = new Font("Sergoe UI", 14, FontStyle.Bold);
+
+			int dateIndex = richTextBox.Text.IndexOf("11/22/2022");
+			int dateLength = 10;
+			richTextBox.Select(dateIndex, dateLength);
+			richTextBox.SelectionFont = new Font("Sergoe UI", 14, FontStyle.Bold);
+
+			int versionIndex = richTextBox.Text.IndexOf("1.0");
+			int versionLength = 3;
+			richTextBox.Select(versionIndex, versionLength);
+			richTextBox.SelectionFont = new Font("Sergoe UI", 14, FontStyle.Italic);
 		}
 	}
 }
