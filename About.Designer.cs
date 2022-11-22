@@ -51,6 +51,8 @@
 			this.richTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.richTextBox.Location = new System.Drawing.Point(12, 12);
 			this.richTextBox.Name = "richTextBox";
+			this.richTextBox.ReadOnly = true;
+			this.richTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
 			this.richTextBox.Size = new System.Drawing.Size(532, 277);
 			this.richTextBox.TabIndex = 2;
 			this.richTextBox.Text = resources.GetString("richTextBox.Text");
@@ -65,6 +67,7 @@
 			this.Controls.Add(this.button1);
 			this.Name = "About";
 			this.Text = "About";
+			this.Load += new System.EventHandler(this.About_Load);
 			this.ResumeLayout(false);
 
 		}

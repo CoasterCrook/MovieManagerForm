@@ -60,6 +60,10 @@
   <data name="richTextBox.Text" xml:space="preserve">
     <value>Movie Manager Application
 
-This application reads data from a Microsoft SQL Server database. Further, it provides the typical CRUD operations: Create, Read, Update, and Delete against the Movies table in our database.</value>
+This application reads data from a Microsoft SQL Server database. Further, it provides the typical CRUD operations: Create, Read, Update, and Delete against the Movies table in our database.
+
+Author:	Garrett Crook
+Date:	11/22/2022
+Version:	1.0</value>
   </data>
 </root>
