@@ -28,7 +28,7 @@ namespace MovieManagerApplication
 					command.Parameters.AddWithValue("@Title", txtMovieTitle.Text);
 					command.Parameters.AddWithValue("@Year", txtYear.Text);
 					command.Parameters.AddWithValue("@Director", txtDirector.Text);
-					command.Parameters.AddWithValue("@Genre", cmbBoxGenre.SelectedIndex);
+					command.Parameters.AddWithValue("@Genre", cmbBoxGenre.SelectedIndex + 1);
 					command.Parameters.AddWithValue("@RottenTomatoesScore", txtRottenScore.Text);
 					command.Parameters.AddWithValue("@TotalEarned", txtEarnings.Text);
 
