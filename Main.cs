@@ -63,7 +63,7 @@ namespace MovieManagerApplication
 		{
 			this.Close();
 		}
-
+		//git test
 		private static string GetConnectionString()
 		{
 			SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
