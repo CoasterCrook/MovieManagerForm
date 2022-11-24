@@ -13,7 +13,7 @@ namespace MovieManagerApplication
 		public int Year { get; set; }
 		public string Director { get; set; }
 		public string Genre { get; set; }
-		public int RottenScore { get; set; }
-		public string TotalEarned { get; set; }
+		public int RottenTomatoesScore { get; set; }
+		public decimal TotalEarned { get; set; }
 	}
 }

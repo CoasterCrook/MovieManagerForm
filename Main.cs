@@ -1,5 +1,6 @@
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MovieManagerApplication
 {
@@ -37,12 +38,10 @@ namespace MovieManagerApplication
 								movie.Genre = genres[genreNumber];
 								
 								if (!reader.IsDBNull(4))
-									movie.RottenScore = reader.GetInt32(4);
+									movie.RottenTomatoesScore = reader.GetInt32(4);
+
 								if (!reader.IsDBNull(5))
-								{
-									decimal totalEarned = reader.GetDecimal(5);
-									movie.TotalEarned = totalEarned.ToString("C");
-								}
+									movie.TotalEarned = reader.GetDecimal(5);
 
 								movies.Add(movie);
 							}
@@ -50,6 +49,10 @@ namespace MovieManagerApplication
 						connection.Close();
 
 						dgvMovies.DataSource = movies;
+						dgvMovies.Columns["TotalEarned"].DefaultCellStyle.Format = "C";
+						dgvMovies.Columns["RottenTomatoesScore"].Width = 130;
+
+
 					}
 				}
 			}
@@ -70,16 +73,15 @@ namespace MovieManagerApplication
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
-			refresh();
-		}
-		public void refresh()
-		{
-			string sqlstm = "Select * from Movies";
+			string sqlstm = "SELECT Title,  Year , Director, Genre, RottenTomatoesScore, TotalEarned  FROM  Movies  ORDER   BY  Title";
 			SqlDataAdapter SDA = new SqlDataAdapter(sqlstm, GetConnectionString());
 			DataSet ds = new();
 			SDA.Fill(ds, "Movies");
+			dgvMovies.Columns["TotalEarned"].DefaultCellStyle.Format = "C";
+			dgvMovies.Columns["RottenTomatoesScore"].Width = 130;
 			dgvMovies.DataSource = ds.Tables[0];
 		}
+
 		public string GetConnectionString()
 		{
 			SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
