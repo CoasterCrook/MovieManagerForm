@@ -4,6 +4,8 @@ using System.Windows.Forms;
 
 namespace MovieManagerApplication
 {
+	// This is a comment created, im testing gitbash!
+	
 	public partial class Main : Form
 	{
 		public Main()
